@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Swapify - Trao đổi kỹ năng cùng sinh viên</title>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/styles.css">
 </head>
+
 <body>
     <!-- Navbar -->
     <nav class="navbar">
@@ -26,17 +29,20 @@
 
     <!-- Main Content Container -->
     <main id="app-container">
-        
+
         <!-- SECTION 1: HOME PAGE -->
         <section id="home" class="view-section active">
             <div class="hero">
                 <div class="hero-content">
                     <div class="badge">Ý tưởng Web #01</div>
                     <h1>Kết nối – Trao đổi kỹ năng<br><span class="text-gradient">cùng sinh viên</span></h1>
-                    <p>Bạn giỏi một kỹ năng và muốn học kỹ năng khác? Hãy trao đổi với người phù hợp. Swapify – Thế giới nơi kỹ năng là sức mạnh.</p>
+                    <p>Bạn giỏi một kỹ năng và muốn học kỹ năng khác? Hãy trao đổi với người phù hợp. Swapify – Thế giới
+                        nơi kỹ năng là sức mạnh.</p>
                     <div class="hero-buttons">
-                        <button class="btn-primary" onclick="showSection('login')">Bắt đầu ngay <i class="fa-solid fa-arrow-right"></i></button>
-                        <button class="btn-secondary" onclick="openVideoModal()"><i class="fa-solid fa-play"></i> Học và dạy miễn phí</button>
+                        <button class="btn-primary" onclick="showSection('login')">Bắt đầu ngay <i
+                                class="fa-solid fa-arrow-right"></i></button>
+                        <button class="btn-secondary" onclick="openVideoModal()"><i class="fa-solid fa-play"></i> Học và
+                            dạy miễn phí</button>
                     </div>
                 </div>
                 <div class="hero-image">
@@ -63,7 +69,7 @@
                     <h2>Tham gia Swapify</h2>
                     <p>Tạo tài khoản để bắt đầu hành trình trao đổi kỹ năng</p>
                 </div>
-                
+
                 <!-- Step 1: Account Info -->
                 <div id="step-1" class="form-step active">
                     <div class="form-group">
@@ -110,13 +116,29 @@
                 <div class="search-bar glass-card">
                     <i class="fa-solid fa-search"></i>
                     <input type="text" placeholder="Tìm kỹ năng hoặc người dùng... (VD: Tiếng Anh, Figma)">
-                    <button class="btn-primary">Tìm kiếm</button>
+                    <button class="btn-primary" onclick="alert('Đang tìm kiếm...')">Tìm kiếm</button>
                 </div>
                 <div class="filters">
-                    <select class="filter-select"><option>Kỹ năng dạy</option><option>Tiếng Anh</option><option>Code</option></select>
-                    <select class="filter-select"><option>Kỹ năng muốn học</option><option>Design</option><option>Marketing</option></select>
-                    <select class="filter-select"><option>Level</option><option>Beginner</option><option>Advanced</option></select>
-                    <select class="filter-select"><option>Hình thức</option><option>Online</option><option>Offline</option></select>
+                    <select class="filter-select">
+                        <option>Kỹ năng dạy</option>
+                        <option>Tiếng Anh</option>
+                        <option>Code</option>
+                    </select>
+                    <select class="filter-select">
+                        <option>Kỹ năng muốn học</option>
+                        <option>Design</option>
+                        <option>Marketing</option>
+                    </select>
+                    <select class="filter-select">
+                        <option>Level</option>
+                        <option>Beginner</option>
+                        <option>Advanced</option>
+                    </select>
+                    <select class="filter-select">
+                        <option>Hình thức</option>
+                        <option>Online</option>
+                        <option>Offline</option>
+                    </select>
                 </div>
             </div>
 
@@ -142,8 +164,10 @@
                     </div>
                     <div class="match-score">87% phù hợp</div>
                     <div class="card-actions">
-                        <button class="btn-primary" onclick="event.stopPropagation(); alert('Gửi yêu cầu Match thành công!')">Match</button>
-                        <button class="btn-outline" onclick="event.stopPropagation(); alert('Mở khung chat')">Chat</button>
+                        <button class="btn-primary"
+                            onclick="event.stopPropagation(); alert('Gửi yêu cầu Match thành công!')">Match</button>
+                        <button class="btn-outline"
+                            onclick="event.stopPropagation(); alert('Mở khung chat')">Chat</button>
                     </div>
                 </div>
 
@@ -168,8 +192,10 @@
                     </div>
                     <div class="match-score score-medium">65% phù hợp</div>
                     <div class="card-actions">
-                        <button class="btn-primary" onclick="event.stopPropagation(); alert('Gửi yêu cầu Match thành công!')">Match</button>
-                        <button class="btn-outline" onclick="event.stopPropagation(); alert('Mở khung chat')">Chat</button>
+                        <button class="btn-primary"
+                            onclick="event.stopPropagation(); alert('Gửi yêu cầu Match thành công!')">Match</button>
+                        <button class="btn-outline"
+                            onclick="event.stopPropagation(); alert('Mở khung chat')">Chat</button>
                     </div>
                 </div>
             </div>
@@ -179,9 +205,10 @@
         <section id="test" class="view-section">
             <div class="test-intro">
                 <h2>Xác minh kỹ năng của bạn</h2>
-                <p>Để đảm bảo chất lượng cộng đồng Swapify, bạn cần hoàn thành một bước xác minh nhanh trước khi dạy.</p>
+                <p>Để đảm bảo chất lượng cộng đồng Swapify, bạn cần hoàn thành một bước xác minh nhanh trước khi dạy.
+                </p>
             </div>
-            
+
             <div class="verification-options">
                 <!-- Micro-Test Card -->
                 <div class="verify-card glass-card">
@@ -199,14 +226,16 @@
                     <button class="btn-secondary w-100" onclick="openPortfolioUpload()">Upload Portfolio</button>
                 </div>
             </div>
-            
+
             <!-- Micro Test UI (Hidden by default) -->
             <div id="micro-test-ui" class="hidden glass-card mt-4 p-4">
                 <div class="test-header">
                     <span class="progress-text">Question 2/6</span>
                     <span class="timer"><i class="fa-solid fa-clock"></i> 04:12</span>
                 </div>
-                <div class="progress-bar-container"><div class="progress-bar" style="width: 33%"></div></div>
+                <div class="progress-bar-container">
+                    <div class="progress-bar" style="width: 33%"></div>
+                </div>
                 <div class="question-content">
                     <h4>Đâu là nguyên tắc cốt lõi của UI/UX Design?</h4>
                     <div class="options">
@@ -217,8 +246,8 @@
                     </div>
                 </div>
                 <div class="test-actions">
-                    <button class="btn-outline">Back</button>
-                    <button class="btn-primary">Next</button>
+                    <button class="btn-outline" onclick="alert('Quay lại câu trước')">Back</button>
+                    <button class="btn-primary" onclick="alert('Chuyển sang câu tiếp theo')">Next</button>
                 </div>
             </div>
         </section>
@@ -234,13 +263,17 @@
                         <div class="stat"><i class="fa-solid fa-star"></i> 4.8 Rating</div>
                         <div class="stat"><i class="fa-solid fa-handshake"></i> 23 Sessions</div>
                     </div>
-                    <button class="btn-primary w-100 mb-2">Gửi yêu cầu Match</button>
-                    <button class="btn-outline w-100">Nhắn tin</button>
+                    <button class="btn-primary w-100 mb-2" onclick="alert('Gửi yêu cầu Match thành công!')">Gửi yêu cầu
+                        Match</button>
+                    <button class="btn-outline w-100" onclick="alert('Mở khung chat với Nguyễn Thùy Linh')">Nhắn
+                        tin</button>
                 </div>
                 <div class="profile-content">
                     <div class="glass-card mb-4 p-4">
                         <h3>Giới thiệu</h3>
-                        <p>Chào mọi người! Mình là Linh, sinh viên năm 3. Mình đã đạt IELTS 7.5 và có kinh nghiệm trợ giảng 1 năm. Hiện tại mình rất muốn học thêm về Photoshop và Illustrator để tự làm portfolio cá nhân.</p>
+                        <p>Chào mọi người! Mình là Linh, sinh viên năm 3. Mình đã đạt IELTS 7.5 và có kinh nghiệm trợ
+                            giảng 1 năm. Hiện tại mình rất muốn học thêm về Photoshop và Illustrator để tự làm portfolio
+                            cá nhân.</p>
                     </div>
                     <div class="skills-detail glass-card mb-4 p-4">
                         <h3>Kỹ năng trao đổi</h3>
@@ -272,32 +305,44 @@
         <section id="community" class="view-section">
             <div class="explore-header">
                 <h2>Cộng đồng Thảo luận</h2>
-                <p class="mb-4" style="color: var(--text-muted)">Tham gia các nhóm học tập, thảo luận ngôn ngữ và chia sẻ kinh nghiệm học thuật.</p>
+                <p class="mb-4" style="color: var(--text-muted)">Tham gia các nhóm học tập, thảo luận ngôn ngữ và chia
+                    sẻ kinh nghiệm học thuật.</p>
                 <div class="search-bar glass-card">
                     <i class="fa-solid fa-search"></i>
                     <input type="text" placeholder="Tìm kiếm câu hỏi hoặc chủ đề...">
-                    <button class="btn-primary">Tìm kiếm</button>
+                    <button class="btn-primary" onclick="alert('Đang tìm kiếm chủ đề...')">Tìm kiếm</button>
                 </div>
             </div>
             <div class="forum-list">
-                <div class="forum-item glass-card mb-4 p-4" style="cursor: pointer; transition: transform 0.2s;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">
-                    <h3><a href="#" style="color: var(--text-main); text-decoration: none;">Communication in English</a></h3>
-                    <p style="color: var(--text-muted); margin-top: 8px;">Let's exchange language to communicate better</p>
+                <div class="forum-item glass-card mb-4 p-4" style="cursor: pointer; transition: transform 0.2s;"
+                    onmouseover="this.style.transform='translateY(-2px)'"
+                    onmouseout="this.style.transform='translateY(0)'">
+                    <h3><a href="#" style="color: var(--text-main); text-decoration: none;">Communication in English</a>
+                    </h3>
+                    <p style="color: var(--text-muted); margin-top: 8px;">Let's exchange language to communicate better
+                    </p>
                     <div class="user-stats mt-4" style="margin-bottom: 0;">
                         <span><i class="fa-solid fa-user"></i> Anna</span>
                         <span><i class="fa-solid fa-comment"></i> 12 replies</span>
                     </div>
                 </div>
-                <div class="forum-item glass-card mb-4 p-4" style="cursor: pointer; transition: transform 0.2s;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">
-                    <h3><a href="#" style="color: var(--text-main); text-decoration: none;">How to say goodbye in Vietnamese?</a></h3>
-                    <p style="color: var(--text-muted); margin-top: 8px;">There are many ways to say hello but how can we actually say goodbye?</p>
+                <div class="forum-item glass-card mb-4 p-4" style="cursor: pointer; transition: transform 0.2s;"
+                    onmouseover="this.style.transform='translateY(-2px)'"
+                    onmouseout="this.style.transform='translateY(0)'">
+                    <h3><a href="#" style="color: var(--text-main); text-decoration: none;">How to say goodbye in
+                            Vietnamese?</a></h3>
+                    <p style="color: var(--text-muted); margin-top: 8px;">There are many ways to say hello but how can
+                        we actually say goodbye?</p>
                     <div class="user-stats mt-4" style="margin-bottom: 0;">
                         <span><i class="fa-solid fa-user"></i> John Doe</span>
                         <span><i class="fa-solid fa-comment"></i> 8 replies</span>
                     </div>
                 </div>
-                <div class="forum-item glass-card mb-4 p-4" style="cursor: pointer; transition: transform 0.2s;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">
-                    <h3><a href="#" style="color: var(--text-main); text-decoration: none;">Skype exchange : English for French. Anyone interested ?</a></h3>
+                <div class="forum-item glass-card mb-4 p-4" style="cursor: pointer; transition: transform 0.2s;"
+                    onmouseover="this.style.transform='translateY(-2px)'"
+                    onmouseout="this.style.transform='translateY(0)'">
+                    <h3><a href="#" style="color: var(--text-main); text-decoration: none;">Skype exchange : English for
+                            French. Anyone interested ?</a></h3>
                     <p style="color: var(--text-muted); margin-top: 8px;">Everything's in the title.</p>
                     <div class="user-stats mt-4" style="margin-bottom: 0;">
                         <span><i class="fa-solid fa-user"></i> R.binoche</span>
@@ -311,40 +356,54 @@
         <section id="blog" class="view-section">
             <div class="explore-header">
                 <h2>Blog & Bài viết ngắn (Language Bites)</h2>
-                <p class="mb-4" style="color: var(--text-muted)">Thực hành viết, chia sẻ câu chuyện và nhận góp ý từ cộng đồng.</p>
-                <button class="btn-primary mb-4"><i class="fa-solid fa-pen"></i> Viết bài mới</button>
+                <p class="mb-4" style="color: var(--text-muted)">Thực hành viết, chia sẻ câu chuyện và nhận góp ý từ
+                    cộng đồng.</p>
+                <button class="btn-primary mb-4" onclick="alert('Mở form viết bài mới')"><i class="fa-solid fa-pen"></i>
+                    Viết bài mới</button>
             </div>
             <div class="blog-grid user-grid">
                 <!-- Blog Item 1 -->
-                <div class="glass-card p-4" style="cursor: pointer; transition: transform 0.2s;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
+                <div class="glass-card p-4" style="cursor: pointer; transition: transform 0.2s;"
+                    onmouseover="this.style.transform='translateY(-5px)'"
+                    onmouseout="this.style.transform='translateY(0)'">
                     <div class="user-card-header mb-2">
-                        <div class="avatar"><img src="https://i.pravatar.cc/150?img=11" alt="Avatar" style="width: 40px; height: 40px;"></div>
+                        <div class="avatar"><img src="https://i.pravatar.cc/150?img=11" alt="Avatar"
+                                style="width: 40px; height: 40px;"></div>
                         <div class="user-info">
                             <h3 style="font-size: 1rem;">Trần Nam</h3>
                             <p>Vừa xong</p>
                         </div>
                     </div>
                     <h4>Hôm nay mình đã học được 10 từ vựng Kanji mới!</h4>
-                    <p style="color: var(--text-muted); margin-top: 10px; font-size: 0.95rem;">Chia sẻ cách mình sử dụng flashcard để ghi nhớ Kanji dễ dàng hơn. Mọi người có tips nào khác không?</p>
+                    <p style="color: var(--text-muted); margin-top: 10px; font-size: 0.95rem;">Chia sẻ cách mình sử dụng
+                        flashcard để ghi nhớ Kanji dễ dàng hơn. Mọi người có tips nào khác không?</p>
                     <div class="card-actions mt-4">
-                        <button class="btn-outline"><i class="fa-solid fa-heart"></i> 24</button>
-                        <button class="btn-outline"><i class="fa-solid fa-comment"></i> 5</button>
+                        <button class="btn-outline" onclick="alert('Đã thích bài viết!')"><i
+                                class="fa-solid fa-heart"></i> 24</button>
+                        <button class="btn-outline" onclick="alert('Mở phần bình luận')"><i
+                                class="fa-solid fa-comment"></i> 5</button>
                     </div>
                 </div>
                 <!-- Blog Item 2 -->
-                <div class="glass-card p-4" style="cursor: pointer; transition: transform 0.2s;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
+                <div class="glass-card p-4" style="cursor: pointer; transition: transform 0.2s;"
+                    onmouseover="this.style.transform='translateY(-5px)'"
+                    onmouseout="this.style.transform='translateY(0)'">
                     <div class="user-card-header mb-2">
-                        <div class="avatar"><img src="https://i.pravatar.cc/150?img=68" alt="Avatar" style="width: 40px; height: 40px;"></div>
+                        <div class="avatar"><img src="https://i.pravatar.cc/150?img=68" alt="Avatar"
+                                style="width: 40px; height: 40px;"></div>
                         <div class="user-info">
                             <h3 style="font-size: 1rem;">Nguyễn Thùy Linh</h3>
                             <p>2 giờ trước</p>
                         </div>
                     </div>
                     <h4>IELTS Speaking Part 2 - Chủ đề "Describe a person"</h4>
-                    <p style="color: var(--text-muted); margin-top: 10px; font-size: 0.95rem;">Mình vừa record lại bài nói của mình. Các bạn có thể nghe và góp ý giúp mình về pronunciation được không?</p>
+                    <p style="color: var(--text-muted); margin-top: 10px; font-size: 0.95rem;">Mình vừa record lại bài
+                        nói của mình. Các bạn có thể nghe và góp ý giúp mình về pronunciation được không?</p>
                     <div class="card-actions mt-4">
-                        <button class="btn-outline"><i class="fa-solid fa-heart"></i> 12</button>
-                        <button class="btn-outline"><i class="fa-solid fa-comment"></i> 8</button>
+                        <button class="btn-outline" onclick="alert('Đã thích bài viết!')"><i
+                                class="fa-solid fa-heart"></i> 12</button>
+                        <button class="btn-outline" onclick="alert('Mở phần bình luận')"><i
+                                class="fa-solid fa-comment"></i> 8</button>
                     </div>
                 </div>
             </div>
@@ -358,7 +417,8 @@
             <h2>Điều khoản sử dụng</h2>
             <div class="terms-text">
                 <h4>1. Quy tắc trao đổi kỹ năng</h4>
-                <p>- Hai bên phải thỏa thuận rõ ràng trước khi bắt đầu.<br>- Tôn trọng thời gian và cam kết.<br>- Không tự ý hủy lịch hẹn đơn phương nhiều lần.</p>
+                <p>- Hai bên phải thỏa thuận rõ ràng trước khi bắt đầu.<br>- Tôn trọng thời gian và cam kết.<br>- Không
+                    tự ý hủy lịch hẹn đơn phương nhiều lần.</p>
                 <h4>2. Hành vi bị cấm</h4>
                 <p>❌ Lừa đảo, lợi dụng người khác.<br>❌ Quấy rối, xúc phạm.<br>❌ Nội dung không phù hợp.</p>
             </div>
@@ -371,4 +431,5 @@
 
     <script src="js/main.js"></script>
 </body>
+
 </html>
