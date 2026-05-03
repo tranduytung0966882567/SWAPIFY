@@ -17,6 +17,8 @@
         <div class="nav-links">
             <a href="#" onclick="showSection('home')">Trang chủ</a>
             <a href="#" onclick="showSection('explore')">Khám phá</a>
+            <a href="#" onclick="showSection('community')">Cộng đồng</a>
+            <a href="#" onclick="showSection('blog')">Blog</a>
             <a href="#" onclick="showSection('test')">Xác minh</a>
             <button class="btn-outline" onclick="showSection('login')">Đăng nhập</button>
         </div>
@@ -265,6 +267,88 @@
                 </div>
             </div>
         </section>
+
+        <!-- SECTION 6: COMMUNITY / FORUM -->
+        <section id="community" class="view-section">
+            <div class="explore-header">
+                <h2>Cộng đồng Thảo luận</h2>
+                <p class="mb-4" style="color: var(--text-muted)">Tham gia các nhóm học tập, thảo luận ngôn ngữ và chia sẻ kinh nghiệm học thuật.</p>
+                <div class="search-bar glass-card">
+                    <i class="fa-solid fa-search"></i>
+                    <input type="text" placeholder="Tìm kiếm câu hỏi hoặc chủ đề...">
+                    <button class="btn-primary">Tìm kiếm</button>
+                </div>
+            </div>
+            <div class="forum-list">
+                <div class="forum-item glass-card mb-4 p-4" style="cursor: pointer; transition: transform 0.2s;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">
+                    <h3><a href="#" style="color: var(--text-main); text-decoration: none;">Communication in English</a></h3>
+                    <p style="color: var(--text-muted); margin-top: 8px;">Let's exchange language to communicate better</p>
+                    <div class="user-stats mt-4" style="margin-bottom: 0;">
+                        <span><i class="fa-solid fa-user"></i> Anna</span>
+                        <span><i class="fa-solid fa-comment"></i> 12 replies</span>
+                    </div>
+                </div>
+                <div class="forum-item glass-card mb-4 p-4" style="cursor: pointer; transition: transform 0.2s;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">
+                    <h3><a href="#" style="color: var(--text-main); text-decoration: none;">How to say goodbye in Vietnamese?</a></h3>
+                    <p style="color: var(--text-muted); margin-top: 8px;">There are many ways to say hello but how can we actually say goodbye?</p>
+                    <div class="user-stats mt-4" style="margin-bottom: 0;">
+                        <span><i class="fa-solid fa-user"></i> John Doe</span>
+                        <span><i class="fa-solid fa-comment"></i> 8 replies</span>
+                    </div>
+                </div>
+                <div class="forum-item glass-card mb-4 p-4" style="cursor: pointer; transition: transform 0.2s;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">
+                    <h3><a href="#" style="color: var(--text-main); text-decoration: none;">Skype exchange : English for French. Anyone interested ?</a></h3>
+                    <p style="color: var(--text-muted); margin-top: 8px;">Everything's in the title.</p>
+                    <div class="user-stats mt-4" style="margin-bottom: 0;">
+                        <span><i class="fa-solid fa-user"></i> R.binoche</span>
+                        <span><i class="fa-solid fa-comment"></i> 5 replies</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 7: BLOG / LANGUAGE BITES -->
+        <section id="blog" class="view-section">
+            <div class="explore-header">
+                <h2>Blog & Bài viết ngắn (Language Bites)</h2>
+                <p class="mb-4" style="color: var(--text-muted)">Thực hành viết, chia sẻ câu chuyện và nhận góp ý từ cộng đồng.</p>
+                <button class="btn-primary mb-4"><i class="fa-solid fa-pen"></i> Viết bài mới</button>
+            </div>
+            <div class="blog-grid user-grid">
+                <!-- Blog Item 1 -->
+                <div class="glass-card p-4" style="cursor: pointer; transition: transform 0.2s;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
+                    <div class="user-card-header mb-2">
+                        <div class="avatar"><img src="https://i.pravatar.cc/150?img=11" alt="Avatar" style="width: 40px; height: 40px;"></div>
+                        <div class="user-info">
+                            <h3 style="font-size: 1rem;">Trần Nam</h3>
+                            <p>Vừa xong</p>
+                        </div>
+                    </div>
+                    <h4>Hôm nay mình đã học được 10 từ vựng Kanji mới!</h4>
+                    <p style="color: var(--text-muted); margin-top: 10px; font-size: 0.95rem;">Chia sẻ cách mình sử dụng flashcard để ghi nhớ Kanji dễ dàng hơn. Mọi người có tips nào khác không?</p>
+                    <div class="card-actions mt-4">
+                        <button class="btn-outline"><i class="fa-solid fa-heart"></i> 24</button>
+                        <button class="btn-outline"><i class="fa-solid fa-comment"></i> 5</button>
+                    </div>
+                </div>
+                <!-- Blog Item 2 -->
+                <div class="glass-card p-4" style="cursor: pointer; transition: transform 0.2s;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
+                    <div class="user-card-header mb-2">
+                        <div class="avatar"><img src="https://i.pravatar.cc/150?img=68" alt="Avatar" style="width: 40px; height: 40px;"></div>
+                        <div class="user-info">
+                            <h3 style="font-size: 1rem;">Nguyễn Thùy Linh</h3>
+                            <p>2 giờ trước</p>
+                        </div>
+                    </div>
+                    <h4>IELTS Speaking Part 2 - Chủ đề "Describe a person"</h4>
+                    <p style="color: var(--text-muted); margin-top: 10px; font-size: 0.95rem;">Mình vừa record lại bài nói của mình. Các bạn có thể nghe và góp ý giúp mình về pronunciation được không?</p>
+                    <div class="card-actions mt-4">
+                        <button class="btn-outline"><i class="fa-solid fa-heart"></i> 12</button>
+                        <button class="btn-outline"><i class="fa-solid fa-comment"></i> 8</button>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
     <!-- Modals -->
@@ -288,3 +372,4 @@
     <script src="js/main.js"></script>
 </body>
 </html>
+
