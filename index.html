@@ -165,9 +165,9 @@
                     <div class="match-score">87% phù hợp</div>
                     <div class="card-actions">
                         <button class="btn-primary"
-                            onclick="event.stopPropagation(); alert('Gửi yêu cầu Match thành công!')">Match</button>
+                            onclick="event.stopPropagation(); openModal('match-modal')">Match</button>
                         <button class="btn-outline"
-                            onclick="event.stopPropagation(); alert('Mở khung chat')">Chat</button>
+                            onclick="event.stopPropagation(); openModal('chat-modal')">Chat</button>
                     </div>
                 </div>
 
@@ -193,9 +193,9 @@
                     <div class="match-score score-medium">65% phù hợp</div>
                     <div class="card-actions">
                         <button class="btn-primary"
-                            onclick="event.stopPropagation(); alert('Gửi yêu cầu Match thành công!')">Match</button>
+                            onclick="event.stopPropagation(); openModal('match-modal')">Match</button>
                         <button class="btn-outline"
-                            onclick="event.stopPropagation(); alert('Mở khung chat')">Chat</button>
+                            onclick="event.stopPropagation(); openModal('chat-modal')">Chat</button>
                     </div>
                 </div>
             </div>
@@ -263,9 +263,9 @@
                         <div class="stat"><i class="fa-solid fa-star"></i> 4.8 Rating</div>
                         <div class="stat"><i class="fa-solid fa-handshake"></i> 23 Sessions</div>
                     </div>
-                    <button class="btn-primary w-100 mb-2" onclick="alert('Gửi yêu cầu Match thành công!')">Gửi yêu cầu
+                    <button class="btn-primary w-100 mb-2" onclick="openModal('match-modal')">Gửi yêu cầu
                         Match</button>
-                    <button class="btn-outline w-100" onclick="alert('Mở khung chat với Nguyễn Thùy Linh')">Nhắn
+                    <button class="btn-outline w-100" onclick="openModal('chat-modal')">Nhắn
                         tin</button>
                 </div>
                 <div class="profile-content">
@@ -358,7 +358,7 @@
                 <h2>Blog & Bài viết ngắn (Language Bites)</h2>
                 <p class="mb-4" style="color: var(--text-muted)">Thực hành viết, chia sẻ câu chuyện và nhận góp ý từ
                     cộng đồng.</p>
-                <button class="btn-primary mb-4" onclick="alert('Mở form viết bài mới')"><i class="fa-solid fa-pen"></i>
+                <button class="btn-primary mb-4" onclick="openModal('blog-modal')"><i class="fa-solid fa-pen"></i>
                     Viết bài mới</button>
             </div>
             <div class="blog-grid user-grid">
@@ -425,6 +425,71 @@
             <div class="modal-actions">
                 <button class="btn-outline" onclick="closeModal('terms-modal')">Hủy</button>
                 <button class="btn-primary" onclick="acceptTerms()">Đồng ý & Tiếp tục</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Match Modal -->
+    <div id="match-modal" class="modal">
+        <div class="modal-content glass-card" style="max-width: 500px;">
+            <h2>Gửi yêu cầu Match</h2>
+            <div class="form-group mt-4">
+                <label>Kỹ năng bạn muốn học</label>
+                <select class="filter-select w-100" style="padding: 12px; margin-bottom: 1rem;"><option>Photoshop</option><option>UI Design</option></select>
+            </div>
+            <div class="form-group">
+                <label>Thời gian đề xuất</label>
+                <input type="text" placeholder="VD: Tối thứ 3 và thứ 5 (20:00 - 22:00)">
+            </div>
+            <div class="form-group">
+                <label>Lời nhắn gửi Partner</label>
+                <textarea rows="3" placeholder="Chào bạn, mình thấy profile của bạn rất phù hợp..."></textarea>
+            </div>
+            <div class="modal-actions">
+                <button class="btn-outline" onclick="closeModal('match-modal')">Hủy</button>
+                <button class="btn-primary" onclick="closeModal('match-modal'); alert('Đã gửi yêu cầu thành công!')">Gửi yêu cầu</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Chat Modal -->
+    <div id="chat-modal" class="modal">
+        <div class="modal-content glass-card" style="max-width: 450px; padding: 0; overflow: hidden;">
+            <div class="explore-header" style="padding: 1.5rem; border-bottom: 1px solid var(--border-glass); margin-bottom: 0;">
+                <h3 style="margin-bottom: 0;"><i class="fa-solid fa-circle text-accent" style="font-size: 0.6rem; color: var(--accent); margin-right: 8px;"></i> Nguyễn Thùy Linh</h3>
+            </div>
+            <div style="height: 300px; padding: 1.5rem; overflow-y: auto; display: flex; flex-direction: column; gap: 1rem; background: rgba(0,0,0,0.2);">
+                <div style="align-self: flex-start; background: rgba(255,255,255,0.1); padding: 10px 15px; border-radius: 12px 12px 12px 0; max-width: 80%;">
+                    Chào bạn, mình thấy bạn đang muốn học Web Dev, mình có thể dạy bạn nhé!
+                </div>
+            </div>
+            <div style="padding: 1rem; border-top: 1px solid var(--border-glass); display: flex; gap: 10px;">
+                <input type="text" placeholder="Nhập tin nhắn..." style="flex: 1; background: rgba(255,255,255,0.05); border: 1px solid var(--border-glass); border-radius: 20px; padding: 10px 15px; color: white;">
+                <button class="btn-primary" style="border-radius: 50%; width: 40px; height: 40px; padding: 0; display: flex; align-items: center; justify-content: center;" onclick="alert('Tính năng gửi tin nhắn đang được phát triển')"><i class="fa-solid fa-paper-plane"></i></button>
+            </div>
+            <button class="btn-outline" style="position: absolute; top: 1rem; right: 1rem; border: none;" onclick="closeModal('chat-modal')"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+    </div>
+
+    <!-- Blog Modal -->
+    <div id="blog-modal" class="modal">
+        <div class="modal-content glass-card" style="max-width: 600px;">
+            <h2>Viết bài chia sẻ (Language Bites)</h2>
+            <div class="form-group mt-4">
+                <label>Tiêu đề bài viết</label>
+                <input type="text" placeholder="Hôm nay bạn học được gì mới?">
+            </div>
+            <div class="form-group">
+                <label>Nội dung</label>
+                <textarea rows="5" placeholder="Chia sẻ kinh nghiệm, câu hỏi hoặc một đoạn ngắn bạn vừa luyện tập bằng ngoại ngữ..."></textarea>
+            </div>
+            <div class="form-group">
+                <label>Chủ đề (Tag)</label>
+                <input type="text" placeholder="VD: #English #Grammar">
+            </div>
+            <div class="modal-actions">
+                <button class="btn-outline" onclick="closeModal('blog-modal')">Hủy</button>
+                <button class="btn-primary" onclick="closeModal('blog-modal'); alert('Đăng bài thành công!')">Đăng bài</button>
             </div>
         </div>
     </div>

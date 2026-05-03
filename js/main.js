@@ -21,8 +21,12 @@ function nextStep(stepNumber) {
 }
 
 // Modals
+function openModal(modalId) {
+    document.getElementById(modalId).classList.add('active');
+}
+
 function showTerms() {
-    document.getElementById('terms-modal').classList.add('active');
+    openModal('terms-modal');
 }
 
 function closeModal(modalId) {
