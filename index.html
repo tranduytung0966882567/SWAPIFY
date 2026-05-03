@@ -115,7 +115,8 @@
                 <h2>Khám phá Mentor & Partner</h2>
                 <div class="search-bar glass-card">
                     <i class="fa-solid fa-search"></i>
-                    <input type="text" placeholder="Tìm kỹ năng hoặc người dùng... (VD: Tiếng Anh, Figma)">
+                    <input id="explore-search" type="text" oninput="filterExploreUsers()"
+                        placeholder="Tìm kỹ năng hoặc người dùng... (VD: Tiếng Anh, Figma)">
                     <button class="btn-primary" onclick="alert('Đang tìm kiếm...')">Tìm kiếm</button>
                 </div>
                 <div class="filters">
@@ -309,7 +310,8 @@
                     sẻ kinh nghiệm học thuật.</p>
                 <div class="search-bar glass-card">
                     <i class="fa-solid fa-search"></i>
-                    <input type="text" placeholder="Tìm kiếm câu hỏi hoặc chủ đề...">
+                    <input id="community-search" type="text" oninput="filterForum()"
+                        placeholder="Tìm kiếm câu hỏi hoặc chủ đề...">
                     <button class="btn-primary" onclick="alert('Đang tìm kiếm chủ đề...')">Tìm kiếm</button>
                 </div>
             </div>
@@ -361,7 +363,7 @@
                 <button class="btn-primary mb-4" onclick="openModal('blog-modal')"><i class="fa-solid fa-pen"></i>
                     Viết bài mới</button>
             </div>
-            <div class="blog-grid user-grid">
+            <div class="blog-grid user-grid" id="blog-list">
                 <!-- Blog Item 1 -->
                 <div class="glass-card p-4" style="cursor: pointer; transition: transform 0.2s;"
                     onmouseover="this.style.transform='translateY(-5px)'"
@@ -435,7 +437,10 @@
             <h2>Gửi yêu cầu Match</h2>
             <div class="form-group mt-4">
                 <label>Kỹ năng bạn muốn học</label>
-                <select class="filter-select w-100" style="padding: 12px; margin-bottom: 1rem;"><option>Photoshop</option><option>UI Design</option></select>
+                <select class="filter-select w-100" style="padding: 12px; margin-bottom: 1rem;">
+                    <option>Photoshop</option>
+                    <option>UI Design</option>
+                </select>
             </div>
             <div class="form-group">
                 <label>Thời gian đề xuất</label>
@@ -447,7 +452,8 @@
             </div>
             <div class="modal-actions">
                 <button class="btn-outline" onclick="closeModal('match-modal')">Hủy</button>
-                <button class="btn-primary" onclick="closeModal('match-modal'); alert('Đã gửi yêu cầu thành công!')">Gửi yêu cầu</button>
+                <button class="btn-primary" onclick="closeModal('match-modal'); alert('Đã gửi yêu cầu thành công!')">Gửi
+                    yêu cầu</button>
             </div>
         </div>
     </div>
@@ -455,19 +461,27 @@
     <!-- Chat Modal -->
     <div id="chat-modal" class="modal">
         <div class="modal-content glass-card" style="max-width: 450px; padding: 0; overflow: hidden;">
-            <div class="explore-header" style="padding: 1.5rem; border-bottom: 1px solid var(--border-glass); margin-bottom: 0;">
-                <h3 style="margin-bottom: 0;"><i class="fa-solid fa-circle text-accent" style="font-size: 0.6rem; color: var(--accent); margin-right: 8px;"></i> Nguyễn Thùy Linh</h3>
+            <div class="explore-header"
+                style="padding: 1.5rem; border-bottom: 1px solid var(--border-glass); margin-bottom: 0;">
+                <h3 style="margin-bottom: 0;"><i class="fa-solid fa-circle text-accent"
+                        style="font-size: 0.6rem; color: var(--accent); margin-right: 8px;"></i> Nguyễn Thùy Linh</h3>
             </div>
-            <div style="height: 300px; padding: 1.5rem; overflow-y: auto; display: flex; flex-direction: column; gap: 1rem; background: rgba(0,0,0,0.2);">
-                <div style="align-self: flex-start; background: rgba(255,255,255,0.1); padding: 10px 15px; border-radius: 12px 12px 12px 0; max-width: 80%;">
+            <div id="chat-messages"
+                style="height: 300px; padding: 1.5rem; overflow-y: auto; display: flex; flex-direction: column; gap: 1rem; background: rgba(0,0,0,0.2);">
+                <div
+                    style="align-self: flex-start; background: rgba(255,255,255,0.1); padding: 10px 15px; border-radius: 12px 12px 12px 0; max-width: 80%;">
                     Chào bạn, mình thấy bạn đang muốn học Web Dev, mình có thể dạy bạn nhé!
                 </div>
             </div>
             <div style="padding: 1rem; border-top: 1px solid var(--border-glass); display: flex; gap: 10px;">
-                <input type="text" placeholder="Nhập tin nhắn..." style="flex: 1; background: rgba(255,255,255,0.05); border: 1px solid var(--border-glass); border-radius: 20px; padding: 10px 15px; color: white;">
-                <button class="btn-primary" style="border-radius: 50%; width: 40px; height: 40px; padding: 0; display: flex; align-items: center; justify-content: center;" onclick="alert('Tính năng gửi tin nhắn đang được phát triển')"><i class="fa-solid fa-paper-plane"></i></button>
+                <input id="chat-input" type="text" placeholder="Nhập tin nhắn..."
+                    style="flex: 1; background: rgba(255,255,255,0.05); border: 1px solid var(--border-glass); border-radius: 20px; padding: 10px 15px; color: white;">
+                <button class="btn-primary"
+                    style="border-radius: 50%; width: 40px; height: 40px; padding: 0; display: flex; align-items: center; justify-content: center;"
+                    onclick="sendMessage()"><i class="fa-solid fa-paper-plane"></i></button>
             </div>
-            <button class="btn-outline" style="position: absolute; top: 1rem; right: 1rem; border: none;" onclick="closeModal('chat-modal')"><i class="fa-solid fa-xmark"></i></button>
+            <button class="btn-outline" style="position: absolute; top: 1rem; right: 1rem; border: none;"
+                onclick="closeModal('chat-modal')"><i class="fa-solid fa-xmark"></i></button>
         </div>
     </div>
 
@@ -477,19 +491,20 @@
             <h2>Viết bài chia sẻ (Language Bites)</h2>
             <div class="form-group mt-4">
                 <label>Tiêu đề bài viết</label>
-                <input type="text" placeholder="Hôm nay bạn học được gì mới?">
+                <input id="blog-title" type="text" placeholder="Hôm nay bạn học được gì mới?">
             </div>
             <div class="form-group">
                 <label>Nội dung</label>
-                <textarea rows="5" placeholder="Chia sẻ kinh nghiệm, câu hỏi hoặc một đoạn ngắn bạn vừa luyện tập bằng ngoại ngữ..."></textarea>
+                <textarea id="blog-content" rows="5"
+                    placeholder="Chia sẻ kinh nghiệm, câu hỏi hoặc một đoạn ngắn bạn vừa luyện tập bằng ngoại ngữ..."></textarea>
             </div>
             <div class="form-group">
                 <label>Chủ đề (Tag)</label>
-                <input type="text" placeholder="VD: #English #Grammar">
+                <input id="blog-tags" type="text" placeholder="VD: #English #Grammar">
             </div>
             <div class="modal-actions">
                 <button class="btn-outline" onclick="closeModal('blog-modal')">Hủy</button>
-                <button class="btn-primary" onclick="closeModal('blog-modal'); alert('Đăng bài thành công!')">Đăng bài</button>
+                <button class="btn-primary" onclick="createBlogPost()">Đăng bài</button>
             </div>
         </div>
     </div>
