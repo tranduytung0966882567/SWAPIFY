@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swapify - Trao đổi kỹ năng cùng sinh viên</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">
+            <i class="fa-solid fa-bolt"></i> Swapify
+        </div>
+        <div class="nav-links">
+            <a href="#" onclick="showSection('home')">Trang chủ</a>
+            <a href="#" onclick="showSection('explore')">Khám phá</a>
+            <a href="#" onclick="showSection('test')">Xác minh</a>
+            <button class="btn-outline" onclick="showSection('login')">Đăng nhập</button>
+        </div>
+    </nav>
+
+    <!-- Main Content Container -->
+    <main id="app-container">
+        
+        <!-- SECTION 1: HOME PAGE -->
+        <section id="home" class="view-section active">
+            <div class="hero">
+                <div class="hero-content">
+                    <div class="badge">Ý tưởng Web #01</div>
+                    <h1>Kết nối – Trao đổi kỹ năng<br><span class="text-gradient">cùng sinh viên</span></h1>
+                    <p>Bạn giỏi một kỹ năng và muốn học kỹ năng khác? Hãy trao đổi với người phù hợp. Swapify – Thế giới nơi kỹ năng là sức mạnh.</p>
+                    <div class="hero-buttons">
+                        <button class="btn-primary" onclick="showSection('login')">Bắt đầu ngay <i class="fa-solid fa-arrow-right"></i></button>
+                        <button class="btn-secondary" onclick="openVideoModal()"><i class="fa-solid fa-play"></i> Học và dạy miễn phí</button>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="glass-card decorative-card card-1">
+                        <i class="fa-brands fa-figma figma-color"></i>
+                        <span>Dạy: UI/UX Design</span>
+                    </div>
+                    <div class="glass-card decorative-card card-2">
+                        <i class="fa-solid fa-code code-color"></i>
+                        <span>Học: Web Dev</span>
+                    </div>
+                    <div class="glass-card decorative-card card-3">
+                        <i class="fa-solid fa-language lang-color"></i>
+                        <span>Dạy: IELTS 7.5</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 2: LOGIN & SIGN UP -->
+        <section id="login" class="view-section">
+            <div class="login-container glass-card">
+                <div class="login-header">
+                    <h2>Tham gia Swapify</h2>
+                    <p>Tạo tài khoản để bắt đầu hành trình trao đổi kỹ năng</p>
+                </div>
+                
+                <!-- Step 1: Account Info -->
+                <div id="step-1" class="form-step active">
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input type="email" placeholder="example@gmail.com">
+                    </div>
+                    <div class="form-group">
+                        <label>Mật khẩu</label>
+                        <input type="password" placeholder="••••••••">
+                    </div>
+                    <button class="btn-primary w-100" onclick="nextStep(2)">Tiếp tục</button>
+                </div>
+
+                <!-- Step 2: Personal Details -->
+                <div id="step-2" class="form-step">
+                    <div class="form-group">
+                        <label>Tên gọi (Nickname)</label>
+                        <input type="text" placeholder="VD: John Doe">
+                    </div>
+                    <div class="form-group">
+                        <label>Trường / Nơi làm việc</label>
+                        <input type="text" placeholder="VD: Đại học Bách Khoa">
+                    </div>
+                    <div class="form-group">
+                        <label>Địa điểm sống (để match offline)</label>
+                        <input type="text" placeholder="VD: Cầu Giấy, Hà Nội">
+                    </div>
+                    <div class="form-group">
+                        <label>Giới thiệu bản thân & Thành tích</label>
+                        <textarea placeholder="Chia sẻ một chút về bạn..." rows="3"></textarea>
+                    </div>
+                    <div class="form-row">
+                        <button class="btn-outline w-50" onclick="nextStep(1)">Quay lại</button>
+                        <button class="btn-primary w-50" onclick="showTerms()">Hoàn thành</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3: EXPLORE -->
+        <section id="explore" class="view-section">
+            <div class="explore-header">
+                <h2>Khám phá Mentor & Partner</h2>
+                <div class="search-bar glass-card">
+                    <i class="fa-solid fa-search"></i>
+                    <input type="text" placeholder="Tìm kỹ năng hoặc người dùng... (VD: Tiếng Anh, Figma)">
+                    <button class="btn-primary">Tìm kiếm</button>
+                </div>
+                <div class="filters">
+                    <select class="filter-select"><option>Kỹ năng dạy</option><option>Tiếng Anh</option><option>Code</option></select>
+                    <select class="filter-select"><option>Kỹ năng muốn học</option><option>Design</option><option>Marketing</option></select>
+                    <select class="filter-select"><option>Level</option><option>Beginner</option><option>Advanced</option></select>
+                    <select class="filter-select"><option>Hình thức</option><option>Online</option><option>Offline</option></select>
+                </div>
+            </div>
+
+            <div class="user-grid">
+                <!-- User Card 1 -->
+                <div class="user-card glass-card" onclick="showSection('profile')">
+                    <div class="user-card-header">
+                        <div class="avatar"><img src="https://i.pravatar.cc/150?img=68" alt="Avatar"></div>
+                        <div class="user-info">
+                            <h3>Nguyễn Thùy Linh</h3>
+                            <p>Đại học Quốc gia HN</p>
+                        </div>
+                        <div class="status online"></div>
+                    </div>
+                    <div class="user-skills">
+                        <div class="skill teach"><span>Dạy:</span> IELTS 7.5</div>
+                        <div class="skill learn"><span>Học:</span> Photoshop</div>
+                    </div>
+                    <div class="user-stats">
+                        <span><i class="fa-solid fa-star"></i> 4.8</span>
+                        <span><i class="fa-solid fa-handshake"></i> 23 sessions</span>
+                        <span class="badge-verify"><i class="fa-solid fa-check-circle"></i> Verified</span>
+                    </div>
+                    <div class="match-score">87% phù hợp</div>
+                    <div class="card-actions">
+                        <button class="btn-primary" onclick="event.stopPropagation(); alert('Gửi yêu cầu Match thành công!')">Match</button>
+                        <button class="btn-outline" onclick="event.stopPropagation(); alert('Mở khung chat')">Chat</button>
+                    </div>
+                </div>
+
+                <!-- User Card 2 -->
+                <div class="user-card glass-card" onclick="showSection('profile')">
+                    <div class="user-card-header">
+                        <div class="avatar"><img src="https://i.pravatar.cc/150?img=11" alt="Avatar"></div>
+                        <div class="user-info">
+                            <h3>Trần Nam</h3>
+                            <p>FPT University</p>
+                        </div>
+                        <div class="status offline"></div>
+                    </div>
+                    <div class="user-skills">
+                        <div class="skill teach"><span>Dạy:</span> ReactJS</div>
+                        <div class="skill learn"><span>Học:</span> Tiếng Nhật</div>
+                    </div>
+                    <div class="user-stats">
+                        <span><i class="fa-solid fa-star"></i> 4.9</span>
+                        <span><i class="fa-solid fa-handshake"></i> 45 sessions</span>
+                        <span class="badge-verify"><i class="fa-solid fa-check-circle"></i> Verified</span>
+                    </div>
+                    <div class="match-score score-medium">65% phù hợp</div>
+                    <div class="card-actions">
+                        <button class="btn-primary" onclick="event.stopPropagation(); alert('Gửi yêu cầu Match thành công!')">Match</button>
+                        <button class="btn-outline" onclick="event.stopPropagation(); alert('Mở khung chat')">Chat</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 4: MICRO-TEST & PORTFOLIO -->
+        <section id="test" class="view-section">
+            <div class="test-intro">
+                <h2>Xác minh kỹ năng của bạn</h2>
+                <p>Để đảm bảo chất lượng cộng đồng Swapify, bạn cần hoàn thành một bước xác minh nhanh trước khi dạy.</p>
+            </div>
+            
+            <div class="verification-options">
+                <!-- Micro-Test Card -->
+                <div class="verify-card glass-card">
+                    <div class="verify-icon"><i class="fa-solid fa-bolt"></i></div>
+                    <h3>Làm bài kiểm tra nhanh</h3>
+                    <p>30 – 45 phút để xác minh kỹ năng của bạn.</p>
+                    <button class="btn-primary w-100" onclick="startMicroTest()">Start Test</button>
+                </div>
+
+                <!-- Portfolio Card -->
+                <div class="verify-card glass-card">
+                    <div class="verify-icon portfolio-icon"><i class="fa-solid fa-folder-open"></i></div>
+                    <h3>Tải sản phẩm thực tế</h3>
+                    <p>Phù hợp nếu bạn đã có kinh nghiệm thực tế.</p>
+                    <button class="btn-secondary w-100" onclick="openPortfolioUpload()">Upload Portfolio</button>
+                </div>
+            </div>
+            
+            <!-- Micro Test UI (Hidden by default) -->
+            <div id="micro-test-ui" class="hidden glass-card mt-4 p-4">
+                <div class="test-header">
+                    <span class="progress-text">Question 2/6</span>
+                    <span class="timer"><i class="fa-solid fa-clock"></i> 04:12</span>
+                </div>
+                <div class="progress-bar-container"><div class="progress-bar" style="width: 33%"></div></div>
+                <div class="question-content">
+                    <h4>Đâu là nguyên tắc cốt lõi của UI/UX Design?</h4>
+                    <div class="options">
+                        <label class="radio-option"><input type="radio" name="q1"> Lấy người dùng làm trung tâm</label>
+                        <label class="radio-option"><input type="radio" name="q1"> Nhiều màu sắc sặc sỡ</label>
+                        <label class="radio-option"><input type="radio" name="q1"> Code phức tạp</label>
+                        <label class="radio-option"><input type="radio" name="q1"> Sử dụng nhiều font chữ</label>
+                    </div>
+                </div>
+                <div class="test-actions">
+                    <button class="btn-outline">Back</button>
+                    <button class="btn-primary">Next</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 5: PROFILE DETAIL -->
+        <section id="profile" class="view-section">
+            <div class="profile-layout">
+                <div class="profile-sidebar glass-card">
+                    <div class="profile-avatar"><img src="https://i.pravatar.cc/150?img=68" alt="Avatar"></div>
+                    <h2>Nguyễn Thùy Linh</h2>
+                    <p class="school">Đại học Quốc gia HN</p>
+                    <div class="profile-stats">
+                        <div class="stat"><i class="fa-solid fa-star"></i> 4.8 Rating</div>
+                        <div class="stat"><i class="fa-solid fa-handshake"></i> 23 Sessions</div>
+                    </div>
+                    <button class="btn-primary w-100 mb-2">Gửi yêu cầu Match</button>
+                    <button class="btn-outline w-100">Nhắn tin</button>
+                </div>
+                <div class="profile-content">
+                    <div class="glass-card mb-4 p-4">
+                        <h3>Giới thiệu</h3>
+                        <p>Chào mọi người! Mình là Linh, sinh viên năm 3. Mình đã đạt IELTS 7.5 và có kinh nghiệm trợ giảng 1 năm. Hiện tại mình rất muốn học thêm về Photoshop và Illustrator để tự làm portfolio cá nhân.</p>
+                    </div>
+                    <div class="skills-detail glass-card mb-4 p-4">
+                        <h3>Kỹ năng trao đổi</h3>
+                        <div class="skill-tags">
+                            <div class="tag teach-tag">Có thể dạy: Tiếng Anh (IELTS) - Expert</div>
+                            <div class="tag teach-tag">Có thể dạy: Giao tiếp Tiếng Anh - Advanced</div>
+                            <div class="tag learn-tag">Muốn học: Photoshop - Beginner</div>
+                            <div class="tag learn-tag">Muốn học: UI Design - Beginner</div>
+                        </div>
+                    </div>
+                    <div class="reviews glass-card p-4">
+                        <h3>Đánh giá từ người học (12)</h3>
+                        <div class="review-item">
+                            <div class="reviewer-info">
+                                <strong>Minh Tuấn</strong> <span class="rating-stars">★★★★★</span>
+                            </div>
+                            <div class="review-tags">
+                                <span class="review-tag positive">Giải thích dễ hiểu</span>
+                                <span class="review-tag positive">Rất kiên nhẫn</span>
+                            </div>
+                            <p>Linh dạy rất dễ hiểu, đặc biệt là phần Speaking. Rất highly recommend!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modals -->
+    <!-- Terms Modal -->
+    <div id="terms-modal" class="modal">
+        <div class="modal-content glass-card">
+            <h2>Điều khoản sử dụng</h2>
+            <div class="terms-text">
+                <h4>1. Quy tắc trao đổi kỹ năng</h4>
+                <p>- Hai bên phải thỏa thuận rõ ràng trước khi bắt đầu.<br>- Tôn trọng thời gian và cam kết.<br>- Không tự ý hủy lịch hẹn đơn phương nhiều lần.</p>
+                <h4>2. Hành vi bị cấm</h4>
+                <p>❌ Lừa đảo, lợi dụng người khác.<br>❌ Quấy rối, xúc phạm.<br>❌ Nội dung không phù hợp.</p>
+            </div>
+            <div class="modal-actions">
+                <button class="btn-outline" onclick="closeModal('terms-modal')">Hủy</button>
+                <button class="btn-primary" onclick="acceptTerms()">Đồng ý & Tiếp tục</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
