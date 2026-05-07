@@ -36,25 +36,41 @@
             <div class="hero">
                 <div class="hero-content">
                     <h1>Kết nối – Trao đổi kỹ năng<br><span class="text-gradient">cùng sinh viên</span></h1>
-                    <p>Bạn giỏi một kỹ năng và muốn học kỹ năng khác? Hãy trao đổi với người phù hợp. Swapify – Thế giới
-                        nơi kỹ năng là sức mạnh.</p>
+                    <div style="margin-bottom: 2rem; color: var(--text-muted); font-size: 1.1rem; line-height: 1.6;">
+                        <p style="color: white; font-weight: 600; margin-bottom: 10px;">Swapify – Thế giới nơi kỹ năng
+                            là sức mạnh</p>
+                        <p style="margin-bottom: 10px;">Bạn không cần phải trả tiền để học một kỹ năng mới.<br>
+                            Bạn chỉ cần có một kỹ năng — Swapify sẽ giúp bạn biến nó thành cơ hội để học thêm nhiều điều
+                            khác.</p>
+                        <p style="margin-bottom: 10px;">Tại Swapify, bạn có thể kết nối với những người có cùng mục
+                            tiêu:</p>
+                        <p style="margin-bottom: 10px;">Bạn giỏi tiếng Anh? Đổi lấy kỹ năng thiết kế<br>
+                            Bạn biết chỉnh ảnh? Đổi lấy kỹ năng lập trình<br>
+                            Bạn học guitar? Đổi lấy tiếng Nhật</p>
+                        <p style="margin-bottom: 0;">Mỗi kỹ năng bạn có đều có giá trị. Và ở đây, nó được “trao đổi”
+                            đúng nghĩa.</p>
+                    </div>
                     <div class="hero-buttons">
                         <button class="btn-primary" onclick="showSection('login')">Bắt đầu ngay <i
                                 class="fa-solid fa-arrow-right"></i></button>
-                        <button class="btn-secondary" onclick="openVideoModal()"><i class="fa-solid fa-play"></i> Học và
+                        <button class="btn-secondary" onclick="openModal('image-popup-modal')"><i
+                                class="fa-solid fa-play"></i> Học và
                             dạy miễn phí</button>
                     </div>
                 </div>
                 <div class="hero-image">
-                    <div class="glass-card decorative-card card-1" onclick="openModal('image-popup-modal')" style="cursor: pointer;">
+                    <div class="glass-card decorative-card card-1" onclick="openModal('image-popup-modal')"
+                        style="cursor: pointer;">
                         <i class="fa-brands fa-figma figma-color"></i>
                         <span>Dạy: UI/UX Design</span>
                     </div>
-                    <div class="glass-card decorative-card card-2" onclick="openModal('image-popup-modal')" style="cursor: pointer;">
+                    <div class="glass-card decorative-card card-2" onclick="openModal('image-popup-modal')"
+                        style="cursor: pointer;">
                         <i class="fa-solid fa-code code-color"></i>
                         <span>Học: Web Dev</span>
                     </div>
-                    <div class="glass-card decorative-card card-3" onclick="openModal('image-popup-modal')" style="cursor: pointer;">
+                    <div class="glass-card decorative-card card-3" onclick="openModal('image-popup-modal')"
+                        style="cursor: pointer;">
                         <i class="fa-solid fa-language lang-color"></i>
                         <span>Dạy: IELTS 7.5</span>
                     </div>
@@ -513,32 +529,49 @@
     <div id="events-modal" class="modal">
         <div class="modal-content glass-card" style="max-width: 500px;">
             <h2>Sự kiện nổi bật</h2>
-            <p class="mb-4" style="color: var(--text-muted)">Khám phá các sự kiện và thử thách sắp tới để nâng cao kỹ năng của bạn.</p>
-            
+            <p class="mb-4" style="color: var(--text-muted)">Khám phá các sự kiện và thử thách sắp tới để nâng cao kỹ
+                năng của bạn.</p>
+
             <div class="event-list" style="display: flex; flex-direction: column; gap: 15px;">
-                <a href="https://docs.google.com/forms/d/e/1FAIpQLScy1aUe1vldhR_37G4JXQIVVRcR5vW92raS3zGPBQvQuHzpgg/viewform?usp=header" target="_blank" class="glass-card p-4" style="text-decoration: none; display: flex; align-items: center; gap: 15px; transition: transform 0.2s;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">
-                    <div style="background: rgba(255, 255, 255, 0.1); padding: 15px; border-radius: 12px; color: var(--accent);">
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLScy1aUe1vldhR_37G4JXQIVVRcR5vW92raS3zGPBQvQuHzpgg/viewform?usp=header"
+                    target="_blank" class="glass-card p-4"
+                    style="text-decoration: none; display: flex; align-items: center; gap: 15px; transition: transform 0.2s;"
+                    onmouseover="this.style.transform='translateY(-2px)'"
+                    onmouseout="this.style.transform='translateY(0)'">
+                    <div
+                        style="background: rgba(255, 255, 255, 0.1); padding: 15px; border-radius: 12px; color: var(--accent);">
                         <i class="fa-solid fa-video" style="font-size: 1.5rem;"></i>
                     </div>
                     <div>
-                        <span style="font-size: 0.8rem; color: var(--accent); font-weight: 600; text-transform: uppercase; letter-spacing: 1px; display: block; margin-bottom: 4px;">Sự kiện tháng 5</span>
+                        <span
+                            style="font-size: 0.8rem; color: var(--accent); font-weight: 600; text-transform: uppercase; letter-spacing: 1px; display: block; margin-bottom: 4px;">Sự
+                            kiện tháng 5</span>
                         <h3 style="color: white; margin-bottom: 5px;">Master Class Webinar</h3>
-                        <p style="color: var(--text-muted); font-size: 0.9rem; margin: 0;">Tham gia buổi chia sẻ trực tuyến cùng các chuyên gia hàng đầu.</p>
+                        <p style="color: var(--text-muted); font-size: 0.9rem; margin: 0;">Tham gia buổi chia sẻ trực
+                            tuyến cùng các chuyên gia hàng đầu.</p>
                     </div>
                 </a>
-                
-                <a href="https://docs.google.com/forms/d/e/1FAIpQLScnevK8dLvRBGAU5U81W4QbfX3Ty2SCDBDt5lB2GjynIRWdJw/viewform?usp=header" target="_blank" class="glass-card p-4" style="text-decoration: none; display: flex; align-items: center; gap: 15px; transition: transform 0.2s;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">
-                    <div style="background: rgba(255, 255, 255, 0.1); padding: 15px; border-radius: 12px; color: #ff9f43;">
+
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLScnevK8dLvRBGAU5U81W4QbfX3Ty2SCDBDt5lB2GjynIRWdJw/viewform?usp=header"
+                    target="_blank" class="glass-card p-4"
+                    style="text-decoration: none; display: flex; align-items: center; gap: 15px; transition: transform 0.2s;"
+                    onmouseover="this.style.transform='translateY(-2px)'"
+                    onmouseout="this.style.transform='translateY(0)'">
+                    <div
+                        style="background: rgba(255, 255, 255, 0.1); padding: 15px; border-radius: 12px; color: #ff9f43;">
                         <i class="fa-solid fa-trophy" style="font-size: 1.5rem;"></i>
                     </div>
                     <div>
-                        <span style="font-size: 0.8rem; color: #ff9f43; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; display: block; margin-bottom: 4px;">Sự kiện tháng 6</span>
+                        <span
+                            style="font-size: 0.8rem; color: #ff9f43; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; display: block; margin-bottom: 4px;">Sự
+                            kiện tháng 6</span>
                         <h3 style="color: white; margin-bottom: 5px;">The 21-Day Skill Challenge</h3>
-                        <p style="color: var(--text-muted); font-size: 0.9rem; margin: 0;">Từ Zero đến Hero - Thử thách 21 ngày nâng cấp bản thân.</p>
+                        <p style="color: var(--text-muted); font-size: 0.9rem; margin: 0;">Từ Zero đến Hero - Thử thách
+                            21 ngày nâng cấp bản thân.</p>
                     </div>
                 </a>
             </div>
-            
+
             <div class="modal-actions mt-4">
                 <button class="btn-outline w-100" onclick="closeModal('events-modal')">Đóng</button>
             </div>
@@ -547,12 +580,15 @@
 
     <!-- Image Popup Modal -->
     <div id="image-popup-modal" class="modal">
-        <div class="modal-content glass-card" style="max-width: 600px; padding: 20px; text-align: center;">
+        <div class="modal-content glass-card" style="max-width: 900px; padding: 20px; text-align: center;">
             <div style="position: relative;">
-                <button class="btn-outline" style="position: absolute; top: -10px; right: -10px; border: none; background: rgba(0,0,0,0.5); width: 36px; height: 36px; border-radius: 50%; padding: 0; display: flex; align-items: center; justify-content: center; z-index: 10;" onclick="closeModal('image-popup-modal')">
+                <button class="btn-outline"
+                    style="position: absolute; top: -10px; right: -10px; border: none; background: rgba(0,0,0,0.5); width: 36px; height: 36px; border-radius: 50%; padding: 0; display: flex; align-items: center; justify-content: center; z-index: 10;"
+                    onclick="closeModal('image-popup-modal')">
                     <i class="fa-solid fa-xmark"></i>
                 </button>
-                <img src="./login_popup.png" alt="User logging in" style="max-width: 100%; border-radius: 12px; display: block; width: 100%;">
+                <img src="./login_popup.png" alt="User logging in"
+                    style="max-width: 100%; border-radius: 12px; display: block; width: 100%;">
             </div>
         </div>
     </div>
