@@ -132,6 +132,19 @@ button {
     animation: fadeIn 0.4s ease;
 }
 .view-section.active { display: block; }
+#home.active {
+    display: flex;
+    flex-direction: column;
+    min-height: calc(100vh - 80px); 
+}
+
+#home-contact {
+    margin-top: auto;
+    padding-top: 3rem;
+    padding-bottom: 2rem;
+    border-top: 1px solid var(--border-glass);
+}
+
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(10px); }
     to { opacity: 1; transform: translateY(0); }
