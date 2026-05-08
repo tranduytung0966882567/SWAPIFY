@@ -144,5 +144,15 @@ function createBlogPost() {
     document.getElementById('blog-content').value = '';
     document.getElementById('blog-tags').value = '';
     
-    alert('Đăng bài thành công!');
+    alert('Đăng đánh giá thành công!');
+}
+
+function scrollToContact() {
+    showSection('home');
+    setTimeout(() => {
+        const contactSection = document.getElementById('home-contact');
+        if (contactSection) {
+            contactSection.scrollIntoView({ behavior: 'smooth' });
+        }
+    }, 100);
 }

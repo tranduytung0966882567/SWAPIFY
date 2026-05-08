@@ -102,14 +102,16 @@ button {
     border-bottom: 1px solid var(--border-glass);
 }
 .logo {
-    font-size: 1.5rem;
-    font-weight: 800;
-    color: white;
     display: flex;
     align-items: center;
-    gap: 8px;
 }
-.logo i { color: var(--accent); }
+.logo img {
+    display: block;
+    transition: transform 0.3s ease;
+}
+.logo img:hover {
+    transform: scale(1.05);
+}
 .nav-links {
     display: flex;
     gap: 2rem;
@@ -402,4 +404,63 @@ button {
     .hero-image { width: 100%; height: 300px; }
     .card-1 { left: 0; } .card-2 { right: 0; }
     .profile-layout { grid-template-columns: 1fr; }
+}
+
+/* Contact Section Styles */
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 2rem;
+    align-items: start;
+    margin-top: 2rem;
+}
+
+.contact-info {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.info-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+}
+
+.map-container {
+    height: 450px;
+    padding: 12px;
+    overflow: hidden;
+}
+
+.social-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.9rem;
+    padding: 8px 16px;
+    border-radius: 10px;
+}
+
+.social-btn i {
+    font-size: 1.1rem;
+}
+
+@media (max-width: 992px) {
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+    .map-container {
+        height: 350px;
+    }
 }

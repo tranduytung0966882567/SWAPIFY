@@ -15,14 +15,14 @@
     <!-- Navbar -->
     <nav class="navbar">
         <div class="logo">
-            <i class="fa-solid fa-bolt"></i> Swapify
+            <img src="logo.png" alt="Swapify Logo" style="height: 45px; cursor: pointer;" onclick="showSection('home')">
         </div>
         <div class="nav-links">
             <a href="#" onclick="showSection('home')">Trang chủ</a>
             <a href="#" onclick="showSection('explore')">Khám phá</a>
             <a href="#" onclick="openModal('events-modal')">Sự kiện</a>
             <a href="#" onclick="showSection('community')">Cộng đồng</a>
-            <a href="#" onclick="showSection('blog')">Blog</a>
+            <a href="#" onclick="showSection('blog')">Đánh giá</a>
             <a href="#" onclick="showSection('test')">Xác minh</a>
             <button class="btn-outline" onclick="showSection('login')">Đăng nhập</button>
         </div>
@@ -73,6 +73,61 @@
                         style="cursor: pointer;">
                         <i class="fa-solid fa-language lang-color"></i>
                         <span>Dạy: IELTS 7.5</span>
+                    </div>
+                </div>
+
+            <!-- Contact Info at bottom of Home -->
+            <div id="home-contact" class="mt-4 pt-4" style="border-top: 1px solid var(--border-glass);">
+                <div class="explore-header">
+                    <h2>Liên hệ với chúng tôi</h2>
+                    <p class="mb-4" style="color: var(--text-muted)">Bạn có câu hỏi hoặc muốn tham gia Swapify? Hãy để lại
+                        lời nhắn, chúng tôi luôn sẵn sàng lắng nghe mọi góp ý và ý tưởng từ bạn 💕</p>
+                </div>
+
+                <div class="contact-grid">
+                    <div class="contact-info glass-card p-4">
+                        <h3 class="mb-4">✨ Swapify Team ✨</h3>
+                        <div class="info-item mb-4">
+                            <div class="info-icon" style="background: rgba(59, 130, 246, 0.15); color: var(--primary);">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div class="info-text">
+                                <span style="color: var(--text-muted); font-size: 0.9rem; display: block;">Email</span>
+                                <a href="mailto:skillswap65@gmail.com"
+                                    style="color: white; text-decoration: none; font-weight: 500;">skillswap65@gmail.com</a>
+                            </div>
+                        </div>
+                        <div class="info-item mb-4">
+                            <div class="info-icon" style="background: rgba(248, 113, 113, 0.15); color: #f87171;">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div class="info-text">
+                                <span style="color: var(--text-muted); font-size: 0.9rem; display: block;">Địa chỉ</span>
+                                <span style="color: white; font-weight: 500;">Số 2, Phạm Văn Đồng, Cầu Giấy, Hà Nội</span>
+                            </div>
+                        </div>
+
+                        <div class="social-connect mt-4">
+                            <h4 class="mb-3" style="font-size: 1rem;">Kết nối với chúng tôi</h4>
+                            <div style="display: flex; gap: 12px;">
+                                <a href="#" class="btn-outline social-btn">
+                                    <i class="fa-brands fa-facebook"></i> Facebook
+                                </a>
+                                <a href="https://www.instagram.com/swapify.65?igsh=MWFnejA4ZXdoc2Y2bQ%3D%3D&utm_source=qr"
+                                    target="_blank" class="btn-outline social-btn">
+                                    <i class="fa-brands fa-instagram"></i> Instagram
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="map-container glass-card">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3723.896238699583!2d105.7816045!3d21.0368383!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ab3475f6848d%3A0xc3f83a2f7c00e66c!2zU-G7kSAyIFBo4bqhbSBWxINuIMSQ4buTbmcsIEPhuqd1IEdp4bqleSwgSMOgIE7hu5lp!5e0!3m2!1svi!2s!4v1715180000000!5m2!1svi!2s"
+                            width="100%" height="100%"
+                            style="border:0; border-radius: 12px; filter: invert(90%) hue-rotate(180deg) brightness(1.2) contrast(0.9);"
+                            allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
                     </div>
                 </div>
             </div>
@@ -373,11 +428,11 @@
         <!-- SECTION 7: BLOG / LANGUAGE BITES -->
         <section id="blog" class="view-section">
             <div class="explore-header">
-                <h2>Blog & Bài viết ngắn (Language Bites)</h2>
+                <h2>Đánh giá & Bài viết ngắn (Language Bites)</h2>
                 <p class="mb-4" style="color: var(--text-muted)">Thực hành viết, chia sẻ câu chuyện và nhận góp ý từ
                     cộng đồng.</p>
                 <button class="btn-primary mb-4" onclick="openModal('blog-modal')"><i class="fa-solid fa-pen"></i>
-                    Viết bài mới</button>
+                    Viết đánh giá mới</button>
             </div>
             <div class="blog-grid user-grid" id="blog-list">
                 <!-- Blog Item 1 -->
@@ -426,6 +481,7 @@
                 </div>
             </div>
         </section>
+
     </main>
 
     <!-- Modals -->
@@ -504,7 +560,7 @@
     <!-- Blog Modal -->
     <div id="blog-modal" class="modal">
         <div class="modal-content glass-card" style="max-width: 600px;">
-            <h2>Viết bài chia sẻ (Language Bites)</h2>
+            <h2>Viết đánh giá (Language Bites)</h2>
             <div class="form-group mt-4">
                 <label>Tiêu đề bài viết</label>
                 <input id="blog-title" type="text" placeholder="Hôm nay bạn học được gì mới?">
@@ -520,7 +576,7 @@
             </div>
             <div class="modal-actions">
                 <button class="btn-outline" onclick="closeModal('blog-modal')">Hủy</button>
-                <button class="btn-primary" onclick="createBlogPost()">Đăng bài</button>
+                <button class="btn-primary" onclick="createBlogPost()">Gửi đánh giá</button>
             </div>
         </div>
     </div>
