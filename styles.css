@@ -135,11 +135,18 @@ button {
 #home.active {
     display: flex;
     flex-direction: column;
-    min-height: calc(100vh - 80px); 
+    min-height: 90vh;
+}
+
+.hero {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
 }
 
 #home-contact {
-    margin-top: auto;
     padding-top: 3rem;
     padding-bottom: 2rem;
     border-top: 1px solid var(--border-glass);
